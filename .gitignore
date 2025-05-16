@@ -5,3 +5,5 @@ venv/
 .env/
 .venv/
 
+# python bytecode
+__pycache__/

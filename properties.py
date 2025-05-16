@@ -26,6 +26,3 @@ def show_gpu_info(idx: int | None = None) -> None:
         L2 cache size             : {props['l2CacheSize'] // 1024} KiB
         Total global memory       : {props['totalGlobalMem'] / 2**30:.2f} GiB
         """).strip(), end="\n\n")
-
-show_gpu_info()           # all GPUs
-# show_gpu_info(0)        # single GPU

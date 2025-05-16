@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 set_up.py — Auto‑install the **correct cupy or pytorch wheel** for your CUDA runtime.
 
@@ -108,24 +107,3 @@ def install_cupy(py: Path, cuda_ver: Optional[str]):
 
     print(f"CUDA {cuda_ver} detected → installing {pkg} …")
     pip_install(py, pkg)
-
-
-def main():
-    ap = argparse.ArgumentParser(description="Install torch matched to local CUDA runtime")
-    ap.add_argument("--venv", type=Path, help="Create/use venv DIR instead of current interpreter")
-    args = ap.parse_args()
-
-    py = ensure_venv(args.venv) if args.venv else Path(sys.executable)
-
-    pip_install(py, "--upgrade", "pip", "setuptools", "wheel")
-
-    install_cupy(py, get_cuda_version())
-
-    # For suppressing pytorch's warning 
-    # pip_install(py, "numpy")
-
-    print("\nSet Up Complete!")
-
-
-if __name__ == "__main__":
-    main()
