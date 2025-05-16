@@ -1,0 +1,7 @@
+# ─── Virtual-environments ─────────────────────────────────────────────────────
+# Possible Top-level venvs
+gpu_prop/
+venv/
+.env/
+.venv/
+
